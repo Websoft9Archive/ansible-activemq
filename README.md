@@ -19,7 +19,7 @@
 
 ## 本项目安装的是 ActiveMQ 最新版吗？
 
-本项目通过下载官方提供的 ActiveMQ 安装包的方式，要保持最新版本，需要维护下载地址
+本项目通过下载官方提供的 ActiveMQ 安装包的方式。若要保持最新版本，需要维护下载地址
 
 通过 [main.yml](/roles/activemq/tasks/main.yml) 文件，查看或修改当前的下载地址
 
