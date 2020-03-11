@@ -1,23 +1,15 @@
   
-# # 服务器前置任务(ubuntu使用)
-- name: Pre_tasks of ActiceMQ
+# 核心任务
+
+- name: activemq
   hosts: all
   become: yes
   become_method: sudo
-  gather_facts: False
-  pre_tasks:
-    - name: Install Python
-      raw: sudo apt update && sudo apt-get -y install python
-
-
-# # 核心任务
-
-- name: ActiceMQ
-  hosts: all
-  become: yes
-  become_method: sudo
+  gather_facts: True
 
   roles:
-    - { role: common, tags: "common"}  
-    - { role: activemq, tags: "activemq"}
-    - { role: end, tags: "end"}
+    - {role: role_common, tags: "role_common"}  
+    - {role: role_cloud, tags: "role_cloud"}  
+    - {role: role_jdk, tags: "role_jdk"}  
+    - {role: active_mq, tags: "active_mq"}
+    - {role: role_end, tags: "role_end"}

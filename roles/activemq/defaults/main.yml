@@ -1,3 +1,2 @@
----
-# vars file for example
-# 保存当前roles 变量 
+
+activemq_download_url: http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz

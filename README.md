@@ -1,57 +1,56 @@
-# ActiveMQ 自动化安装与部署
 
-本项目是由 [Websoft9](http://www.websoft9.com) 研发的 [ActiveMQ](http://activemq.apache.org) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 ActiveMQ，让原本复杂的安装过程变得没有任何技术门槛。  
+# Redis 自动化安装与部署
+
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [ActiveMQ](https://activemq.apache.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 Redis，让原本复杂的安装过程变得没有任何技术门槛。  
 
 本项目是开源项目，采用 LGPL3.0 开源协议。
 
 ## 配置要求
 
-操作系统：目支持 Ubuntu16.x 以上部署此脚本  
-硬件配置：最低1核1G，10G系统盘空间，否则无法安装。MQ 在运行过程中可能会产生大量日志文件，建议硬盘不低于 100G
+安装本项目，确保符合如下的条件：
 
-更多要求请参考官方文档 [Pre-Installation Requirements](http://activemq.apache.org/getting-started#Pre-InstallationRequirements)
+| 条件       | 详情       | 备注  |
+| ------------ | ------------ | ----- |
+| 操作系统       | CentOS7.x, Ubuntu18.04, Amazon Linux2       |    |
+| 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 |  |
+| 私有云|  KVM, VMware, VirtualBox, OpenStack |  |
+| 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
 ## 组件
 
-包含的核心组件为：ActiveMQ, Java
+包含的核心组件为：OpenJDK, ActiveMQ
 
 更多请见[参数表](/docs/zh/stack-components.md)
 
-## 本项目安装的是 ActiveMQ 最新版吗？
+## 本项目安装的是 Redis 最新版吗？
 
-本项目通过下载官方提供的 ActiveMQ 安装包的方式。若要保持最新版本，需要维护下载地址
+本项目是下载[ActiceMQ源码](https://activemq.apache.org/components/artemis/download/past_releases)安装。  
 
-通过 [main.yml](/roles/activemq/tasks/main.yml) 文件，查看或修改当前的下载地址
-
-```
-- name: Download ActiveMQ
-      unarchive:
-        src: http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz
-        dest: /opt/
-        remote_src: yes
-        owner: activemq
-        group: activemq
-```
+我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装所需的Redis版本。
 
 ## 安装指南
 
-以 root 用户登录 Linux，运行下面的**命令脚本**即可启动自动化部署，然后耐心等待，直至安装成功。
+以 root 用户登录 Linux，运行下面的**一键自动化安装命令**即可启动自动化部署。若没有 root 用户，请以其他用户登录 Linux 后运行 `sudo su -` 命令提升为 root 权限，然后再运行下面的脚本。
 
 ```
-# coming soon
-```  
+wget -N https://raw.githubusercontent.com/Websoft9/linux/master/ansible_script/install.sh ; bash install.sh repository=activemq
+```
 
-注意：  
+脚本后启动，就开始了自动化安装，必要时需要用户做出交互式选择，然后耐心等待直至安装成功。
 
-1. 如果以非 root 用户身份登录 Linux，请先通过 sudo 或 su 提升权限，再运行脚本。
-2. 由于自动化安装过程中有大量下载任务，若网络不通（或速度太慢）会引起下载失败，从而导致安装程序终止运行。此时，请重置服务器后再次尝试安装，若仍然无法完成，请使用我们在公有云上发布的 [ActiveMQ 镜像](https://apps.websoft9.com/activemq) 的部署方式
+**安装中的注意事项：**  
+
+1. 操作不慎或网络发生变化，可能会导致SSH连接被中断，安装就会失败，此时请重新安装
+2. 安装缓慢、停滞不前或无故中断，主要是网络不通（或网速太慢）导致的下载问题，此时请重新安装
+
+多种原因导致无法顺利安装，请使用我们在公有云上发布的 [ActiveMQ 镜像](https://apps.websoft9.com/activemq) 的部署方式
 
 
 ## 文档
 
-文档链接：https://support.websoft9.com/docs/activemq
+文档链接：https://support.websoft9.com/docs/activemq/zh
 
 ## FAQ
 
-- 命令脚本部署与镜像部署有什么区别？请参考[镜像部署-vs-脚本部署](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
+- 命令脚本部署与镜像部署有什么区别？请参考：[镜像部署-vs-脚本部署](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
 - 本项目支持在 Ansible Tower 上运行吗？支持

@@ -12,7 +12,7 @@
 
     - name: Download ActiveMQ
       unarchive:
-        src: "{{activemq_download_url}}"
+        src: http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz
         dest: /opt/
         remote_src: yes
         owner: activemq
@@ -35,6 +35,7 @@
         name: activemq
         state: started
         enabled: yes
+
 
     - name: Setting File Permission
       shell: chmod 640  /opt/apache-activemq/examples/stomp/php/*
