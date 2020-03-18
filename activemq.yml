@@ -5,11 +5,14 @@
   hosts: all
   become: yes
   become_method: sudo
-  gather_facts: True
+
+  vars_files:
+    - vars/main.yml
 
   roles:
     - {role: role_common, tags: "role_common"}  
     - {role: role_cloud, tags: "role_cloud"}  
     - {role: role_jdk, tags: "role_jdk"}  
-    - {role: active_mq, tags: "active_mq"}
+    - {role: activemq, tags: "activemq"}
+    - {role: role_preend, tags: "preend"}
     - {role: role_end, tags: "role_end"}
