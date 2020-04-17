@@ -57,6 +57,6 @@
 # print version
 - block:
   - name: Check ActiveMQ Version
-    shell: activemq version
+    shell: ls /opt/apache-activemq/ | grep *activemq
     register: check_activemq_version
     notify: check_activemq_version
