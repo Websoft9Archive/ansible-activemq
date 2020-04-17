@@ -11,7 +11,10 @@
     shell: /usr/sbin/nologin
     home: /opt/apache-activemq
     create_home: no
-
+    
+- name: Remove extra dir for re-installation
+  shell: rm -rf /opt/apache-activemq
+  
 - name: Download ActiveMQ
   unarchive:
     src: "{{activemq_download_url}}"
@@ -19,15 +22,15 @@
     remote_src: yes
     owner: activemq
     group: activemq
+    
+- name: Rename the ActiveMQ after download
+  shell: mv /opt/apache-activemq-* /opt/apache-activemq
 
 # install by OS family
 - name: Install this role on {{ansible_os_family}}
   include: "{{ansible_os_family}}.yml"
 
 # configure
-- name: Rename the ActiveMQ after download
-  shell: mv /opt/apache-activemq-* /opt/apache-activemq
-
 - name: Add x authority for activemq
   shell: chmod +x /opt/apache-activemq/bin/activemq
 
