@@ -1,4 +1,10 @@
 ---
+
+# pre-installation
+
+- set_fact:
+    activemq_download_url: "{{activemq_meta[activemq_distribution].download_url}}"
+
 - name: Add ActiveMQ User
   user:
     name: activemq
@@ -13,12 +19,19 @@
     remote_src: yes
     owner: activemq
     group: activemq
-    
-- shell: mv /opt/apache-activemq-* /opt/apache-activemq
 
-- shell: chmod +x /opt/apache-activemq/bin/activemq
+# install by OS family
+- name: Install this role on {{ansible_os_family}}
+  include: "{{ansible_os_family}}.yml"
 
-- name: Setting Environment
+# configure
+- name: Rename the ActiveMQ after download
+  shell: mv /opt/apache-activemq-* /opt/apache-activemq
+
+- name: Add x authority for activemq
+  shell: chmod +x /opt/apache-activemq/bin/activemq
+
+- name: Setting Environment variable for activemq
   shell: echo 'export PATH="$PATH:/opt/apache-activemq/bin"' >> /etc/profile
 
 - name: Configuration ActiveMQ Server
@@ -37,3 +50,10 @@
 
 - name: Setting Owner and  Group
   shell: chown -R activemq. /opt/apache-activemq
+
+# print version
+- block:
+  - name: Check ActiveMQ Version
+    shell: activemq version
+    register: check_activemq_version
+    notify: check_activemq_version

@@ -1,2 +1,12 @@
+# this vars is only for sample
+activemq_download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz"
+activemq_distribution: ""classic"
 
-activemq_download_url: http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz
+# you should modify these URL when you want to change the installation version
+activemq_meta:
+  "classic":
+    download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz"
+    service: ""
+  "artemis":
+    download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz"
+    service: ""
