@@ -11,6 +11,8 @@
 
 ### Bug Fixes
 
+* 2020-04-17  改用role_jdk 之后 activemq 服务无法启动
+
 
 ### Features
 
