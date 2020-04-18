@@ -15,11 +15,9 @@ module.exports = [
         title: 'Best Practices',
         collapsable: false,
         children: [
-          '/solution-smtp',
-          '/solution-https',
           '/solution-backup',
           '/solution-upgrade',
-          '/solution-odoo',
+          '/solution-activemq',
           '/solution-more',
         ]
       },
@@ -29,9 +27,7 @@ module.exports = [
         collapsable: false,
         children: [
           '/admin-services',
-          '/admin-postgresql',
-          ['https://support.websoft9.com/docs/linux/lang-python.html','Python'],
-          ['https://support.websoft9.com/docs/linux/webs-nginx.html','Nginx'],
+          ['https://support.websoft9.com/docs/linux/lang-python.html','Java'],
           ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
       },
