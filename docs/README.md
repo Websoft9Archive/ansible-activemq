@@ -6,15 +6,15 @@ home: false
 
 This documentation is provided by [Websoft9](https://www.websoft9.com/), it can help users to acquire skills of ActiveMQ Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
 
-[ActiveMQ](https://www.odoo.com/) is a suite of web based open source business apps.The main ActiveMQ Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing, Purchase Management,ActiveMQ Apps can be used as stand-alone applications, but they also integrate seamlessly so you get a full-featured Open Source ERP when you install several Apps.
+[ActiveMQ](https://activemq.apache.org/) is the most popular and powerful open source messaging and Integration Patterns server.Apache ActiveMQ is fast, supports many Cross Language Clients and Protocols, comes with easy to use Enterprise Integration Patterns and many advanced features while fully supporting JMS 1.1 and J2EE 1.4. Apache ActiveMQ is released under the Apache 2.0 License
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odooui-websoft9.png)
+![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
 
 ---
 
 ## Improve
 
-This document will continue to improve and broadly absorb the needs of users. If you have good idea, please don't hesitate to give us feedback by "Edit this page on GitHub", and welcome you to fork this documentation on [Github](https://github.com/Websoft9/ansible-odoo)
+This document will continue to improve and broadly absorb the needs of users. If you have good idea, please don't hesitate to give us feedback by "Edit this page on GitHub", and welcome you to fork this documentation on [Github](https://github.com/Websoft9/ansible-activemq)
 
 ## Scope
 

@@ -4,46 +4,36 @@ The ActiveMQ deployment package contains a sequence software (referred to as "co
 
 ## Path
 
+You can check the file path by the cmd `whereis` of ActiveMQ, and we have prepared more detail for your reference
+
+```
+whereis activemq
+whereis java
+```
+
 ### ActiveMQ
 
-ActiveMQ installation directory: */usr/lib/python3/dist-packages/odoo*  
-ActiveMQ configuration file: */etc/odoo/odoo.conf*  
-ActiveMQ log directory: */var/log/odoo*    
+ActiveMQ installation directory:  */opt/activemq/*  
+ActiveMQ configuration directory:  */opt/apache-activemq/conf*  
+ActiveMQ data directory:  */opt/apache-activemq/data*  
+ActiveMQ logs directory:  */opt/apache-activemq/data/activemq.log*
 
-### Python
+> you can reset the administrator password of ActiveMQ by modify the file: */opt/apache-activemq/conf/jetty-realm.propertie* 
 
-Python installation directory: * /usr/lib/python-v*    
-Python VM directory: */usr/bin/python-v*
+### Java
 
--v is version 2.7/3/3.6/3.7
-
-### Nginx
-
-Nginx vhost configuration file: */etc/nginx/sites-available/default*  
-Nginx main configuration file: */etc/nginx/nginx.conf*  
-Nginx logs file: */var/log/nginx/*
-
-### PostgreSQL
-
-PostgreSQL installation directory: */usr/bin/psql*  
-PostgreSQL data file: */var/lib/postgresql*   
-PostgreSQL configuration file: */etc/postgresql/10/main/postgresql.conf*      
-PostgreSQL log directory: */var/log/postgresql*  
-PostgreSQL GUI management: ActiveMQ's log in page have provided the database GUI management tools
-
+Java Directory: */usr/lib/jvm*
 
 ## Ports
 
 You can control(open or shut down) ports by **[Security Group Setting](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** of your Cloud Server whether the port can be accessed from Internet.
 
-These ports should be opened for this application:
+You can run the cmd `netstat -tunlp` to list all used ports, and we list the following most useful ports for you:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| MySQL | 3306 | Remote connect MySQL | Optional |
-| HTTP | 80 | HTTP requests for ActiveMQ | Required |
-| HTTPS | 443 | HTTPS requests ActiveMQ | Optional |
-| PostgreSQL | 5432 | Remote connect PostgreSQL | Optional |
+| HTTP | 8161 | HTTP requests for ActiveMQ Console| Required |
+| HTTPS | 5672 | amqp | Optional |
 
 ## Version
 
@@ -53,13 +43,9 @@ You can see the version from product page of Marketplace. However, after being d
 # Linux Version
 lsb_release -a
 
-# Python Version
-python --version  
-python3 --version
+# Java Version
+java -version
 
-# Nginx version:
-nginx -v
-
-# PostgeSQL version:
-psql --version
+# ActiveMQ version
+ls /opt/apache-activemq | grep activemq
 ```

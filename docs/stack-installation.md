@@ -5,44 +5,33 @@ If you have completed the ActiveMQ deployment on Cloud Platform, the following s
 ## Preparation
 
 1. Get the **Internet IP** on your Cloud Platform
-2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure the TCP:80 is allowed
+2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure the TCP:8161 is allowed
 3. Make a domain resolution on your DNS Console if you want to use domain for ActiveMQ
 
 ## ActiveMQ Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://domain name* or *http://Internet IP*, you will enter installation wizard of ActiveMQ
- ![ActiveMQ初始化页面](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-startcreatedb-websoft9.png)
+1. Using local Chrome or Firefox to visit the URL *http://DNS:8161* or *http://Internet IP:8161*, you will enter installation wizard of ActiveMQ
+  ![ActiveMQ console](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-login-websoft9.png)
 
-2.Fill in all items, then click **create database** button to start create one Company's database
-  > The Email and Password is credentials for log in to ActiveMQ
+2. Click link【Manage ActiveMQ broker】to login ActiveMQ console([Don't know password?](/stack-accounts.md#activemq))
+  ![ActiveMQ console](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
 
-3. After the create database is complete, log in to the ActiveMQ Console and install the apps your required.
-  ![ActiveMQ APPS](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-consoleui-websoft9.png)
+3. You can reset the password by modify the file */opt/apache-activemq/conf/jetty-realm.properties* 
 
-4. Log out, click the **Manage Database** in the log in page of ActiveMQ  
-  ![ActiveMQ manage database](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-loginpage-websoft9.png)
-
-5. Click the **set a master password** to set a management password for ActiveMQ's databases(very important)
-  ![ActiveMQ set a pssword](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-setmasterpw-websoft9.png)
-
-6. ActiveMQ Support for multi-enterprise, so you can **create database** again for creating new company
-  ![ActiveMQ create database again](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-multidb-websoft9.png)
-
-7. Return to log in page, you can see a new database listed for log in
-  ![ActiveMQ login](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-multidblogin-websoft9.png)
-
-> More useful ActiveMQ guide, please refer to [ActiveMQ Documentation](https://www.odoo.com/documentation/master/index.html)
+> More useful ActiveMQ guide, please refer to [Using Apache ActiveMQ](https://activemq.apache.org/using-activemq)
 
 ## Q&A
 
 #### I can't visit the start page of ActiveMQ?
 
-Your TCP:80 of Security Group Rules is not allowed so there no response from Chrome or Firefox
+Your TCP:8161 of Security Group Rules is not allowed so there no response from Chrome or Firefox
 
-#### Which database does this ActiveMQ use?
+#### ActiveMQ service can't start? 
 
-PostgreSQL
+Make sure your **hostname** of Server not include the str ".". e.g activemq5.6 is a not regular for ActiveMQ
 
-#### Check the Demo data, can you delete the data later?
+you can rename hostname by the following command
 
-Their no tools for you to delete Demo data. It is recommended to delete the database directly and then add it again (the Demo data is no longer checked)
+```
+hostnamectl set-hostname activemq
+```

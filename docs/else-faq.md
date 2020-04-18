@@ -1,51 +1,50 @@
 # FAQ
 
-#### ActiveMQ support multi-language?
+#### What the difference between Active Classic and ActiveMQ Artemis?
 
-Yes, refer to [Add language](/solution-odoo.md#add-your-language)
+ActiveMQ Artemis is the next generation of ActiveMQClassic. Refer to: [ActiveMQ Classic](https://activemq.apache.org/getting-started), [ActiveMQ Artemis](https://activemq.apache.org/components/artemis/documentation/)
 
-#### Where is the database connection configuration of ActiveMQ?
+#### How can I enable the debug mode of ActiveMQ service?
 
-ActiveMQ used the [Peer Authentication](https://www.postgresql.org/docs/10/auth-methods.html#AUTH-PEER) to connect PostgreSQL, the peer authentication method works by obtaining the client's operating system user name from the kernel and using it as the allowed database user name (with optional user name mapping). This method is only supported on local connections.
+```
+systemctl stop activemq
+/opt/apache-activemq/bin/activemq console
+```
 
-### Why can't I see the ActiveMQ Updates feature in the Settings panel?
+#### How to set the ActiveMQ console password?
 
-The function is only used in the developer mode, make sure you have change to [Developer Mode](/solution-odoo.md#enable-developer-mode)
+You can reset or set the password by modity the file: */opt/apache-activemq/conf/jetty-realm.properties*, then **systemctl restart activemq**
 
-#### How can I delete the Demo data of ActiveMQ?
+#### How can I log out ActiveMQ console?
 
-It is recommended to delete the database directly and then add it again (the Demo data is no longer checked)
+coming soon...
 
-#### Can ActiveMQ export PDF files?
 
-Yes, you can test it from the modules: Invoice, Purchase
-![ActiveMQ print to PDF](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-printtopdf-websoft9.png)
+#### Is the Tomcat included in the ActiveMQ directory?
+
+Yes, ActiveMQ integrated the Tomcat
 
 #### If there is no domain name, can I deploy ActiveMQ?
 
-Yes, visit ActiveMQ by *http://Internet IP*
-
-#### What is the password for the database root user?
-
-The password is stored in the server related file: `/credentials/password.txt`
-
-#### Is there a web-base GUI database management tools?
-
-Yes, ActiveMQ includes the database GUI functions, refer to [ActiveMQ Mange Database function](/admin-postgresql.md) 
+Yes, visit ActiveMQ by *http://Internet IP:8161*
 
 #### Is it possible to modify the source path of ActiveMQ?
 
-No
+Yes, but you should reset the PATH of ActiveMQ by the following command
+```
+echo 'export PATH="$PATH:/opt/apache-activemq/bin"' >> /etc/profile
+```
 
-#### How to change the permissions of filesytem?
+#### How to change the permissions of file system?
 
 Change owner(group) or permissions like below:
 
 ```shell
-chown -R nginx.nginx /data
-find /data -type d -exec chmod 750 {} \;
-find /data -type f -exec chmod 640 {} \;
+chown -R activemq.activemq /opt/apache-activemq
+find /opt/apache-activemq -type d -exec chmod 750 {} \;
+find /opt/apache-activemq -type f -exec chmod 640 {} \;
 ```
+
 #### What's the difference between Deployment and Installation?
 
 - Deployment is a process of installing and configuring a sequence of software in sequence in a different order, which is a complex system engineering.  

@@ -1,71 +1,24 @@
-# ActiveMQ Configuration
+# ActiveMQ Web Demos
 
-This chapter lists some of the most common configurations of ActiveMQ.
+ActiveMQ comes with a number of Web demos that illustrate how to use the ActiveMQ broker with REST and AJAX. The Web demos are not activated in the default configuration, so you must follow the steps below to get them running:
 
-## Basic Settings
+1. Edit the */opt/apache-activemq/examples/conf/activemq-demo.xml* file and change the `locations` property to reflect the location of the encrypted credentials file, located at */opt/activemq/conf/credentials-enc.properties*:
+  ```shell
+  <property name="locations">
+        <value>file:${activemq.conf}/credentials-enc.properties</value>
+  </property>
+  ```
 
-Go to ActiveMQ's Settings panel
+2. If the ActiveMQ server is currently running, stop it:
+  ```shell
+  systemctl stop activemq
+  ```
 
-1. Log in ActiveMQ, and click the **Settings icon** in the left top menu
-   ![ActiveMQ  Settings ](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-settingspanel-websoft9.png)
-2. Then, you can install apps, set language, add user, set up company and more
+3. Run the example:
+  ```shell
+  cd /opt/activemq
+  sudo ./bin/activemq console xbean:/opt/activemq/examples/conf/activemq-demo.xml
+  ```
 
-### Set your Logo
-
-![ActiveMQ set logo](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-settingslogo-websoft9.png)
-
-### Add your language
-
-1. Go to **Settings** console to add a new language
-  ![ActiveMQ add new language](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-settingslangs-websoft9.png)
-2. Then go to **Administrator** > **Prefrences**    
-  ![ActiveMQ user prefrences](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-pref-websoft9.png)
-3. Set language for administrator
-  ![ActiveMQ set language](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-language002-websoft9.png)
-
-## Enable developer mode
-
-1. Log in to ActiveMQ, open the **Settings** item by clicking the settings icon in the upper left corner.
-2. Click **Active the developer mode** on the lower right of the Settings screen.
-   ![ActiveMQ Developer Mode](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-enabledev-websoft9.png)
-3. In the developer mode, the Settings console has more features.
-
-## Install wkhtmltopdf
-
-ActiveMQ has installed the wkhtmltopdf, if you want to reintall it, follow is the steps:
-
-1.  Remove the old version of wkhtmltopdf
-
-    ~~~
-    ~# sudo apt-get remove wkhtmltopdf 
-    ~# sudo apt-get autoremove
-    ~~~
-
-2.  Download wkhtmltopdf tar file from Github
-
-    ~~~
-    ~# wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-    ~~~
-
-3.  Unzip it and you can find a new folder named wkhtmltox in your Server
-
-    ~~~
-    ~# tar –xf [filename]
-    ~~~
-
-4.  Copy the file *wkhtmltox/bin/wkhtmltomage* and *wkhtmmltox/bin/wkhtmltoodf* the directory */usr/bin*
-
-    ~~~
-    ~# cp wkhtmltox/bin/wkhtmltoimage /usr/bin/
-    ~# cp wkhtmmltox/bin/wkhtmltoodf /usr/bin/
-    ~~~
-
-5.  Restart ActiveMQ service
-
-    ~~~
-    ~# systemctl restart odoo
-    ~~~
-
-## Apps Marketplace
-
-In addition to the base modules, ActiveMQ offers a number of premium third-party modules through [ActiveMQ Apps Marketplace](https://www.odoo.com/apps/modules)
+4. The ActiveMQ broker should now start.
+5. Log in to the Web administration panel and view the demos by browsing to *http://Internet IP:8161/demo*, If needed, use the credentials obtained from the server dashboard to log in.

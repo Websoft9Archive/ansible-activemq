@@ -2,29 +2,14 @@
 
 These commands you must know when you using the ActiveMQ of Websoft9
 
-### ActiveMQ
+## ActiveMQ
 
 ```shell
-sudo systemctl start odoo
-sudo systemctl stop odoo
-sudo systemctl restart odoo
-sudo systemctl status odoo
-```
+sudo systemctl start activemq
+sudo systemctl stop activemq
+sudo systemctl restart activemq
+sudo systemctl status activemq
 
-### Nginx
-
-```shell
-sudo systemctl start nginx
-sudo systemctl stop nginx
-sudo systemctl restart nginx
-sudo systemctl status nginx
-```
-
-### PostgreSQL
-
-```shell
-sudo systemctl start postgresql
-sudo systemctl stop postgresql
-sudo systemctl restart postgresql
-sudo systemctl status postgresql
+# you can use this debug mode if ActiveMQ service can't run
+/opt/apache-activemq/bin/activemq console
 ```

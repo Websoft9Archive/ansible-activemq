@@ -24,12 +24,21 @@ yum update -y
 
 ## ActiveMQ升级
 
-ActiveMQ 后台提供了在线升级能力，让升级工作变得非常简单。参考下面的步骤完成升级：
+ActiveMQ 主要采用二级制安装方式，其升级方案差不多等于安装：
 
-1. 登录 ActiveMQ 后台，[启动开发者模式](/zh/solution-odoo.md#开发者模式)
-2. 通过 【Settings】>【Updates】开始更新 ActiveMQ 主程序
-   ![ActiveMQ升级提示](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-upgradesui-websoft9.png)
-3. 升级成功会有 “Well done...” 的提示
-4. 点击 【Update Apps list】，开始更新 ActiveMQ 模块
+1. 依次运行如下的命令做好准备：
+   ```
+   # stop ActiveMQ service
+   systemctl stop activemq
 
-更多更新方案和注意事项请参考官方文档：[ActiveMQ Update](https://www.odoo.com/documentation/master/setup/update.html)
+   # rename the dir of ActiveMQ for backup
+   mv /opt/apache-activemq  /opt/apache-activemqBK
+   ```
+2. 访问 ActiveMQ 官方网站，[下载](http://activemq.apache.org/components/classic/download/)后解压并上传到：*/opt* 目录，并命名为 *apache-activemq*
+3. 分别运行下面的修改权限
+   ```
+   chown -R activemq. /opt/apache-activemq
+   chmod 640  /opt/apache-activemq/examples/stomp/php/*
+   chmod +x /opt/apache-activemq/bin/activemq
+   ```
+4. 重启 [ActiveMQ服务](/zh/admin-services#activemq) 后升级完成

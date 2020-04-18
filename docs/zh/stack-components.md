@@ -26,17 +26,8 @@ ActiveMQ 日志目录： */opt/apache-activemq/data/activemq.log*
 
 ### Java
 
+Java Directory: */usr/lib/jvm*
 
-
-Python 安装目录： */usr/lib/python**  
-Python 虚拟机目录: */usr/bin/python**  
-*is version 2.7/3/3.6/3.7
-
-### Nginx
-
-Nginx 虚拟主机配置文件：*/etc/nginx/sites-available/default*  
-Nginx 主配置文件： */etc/nginx/nginx.conf*  
-Nginx 日志目录： */var/log/nginx/*
 
 ## 端口号
 

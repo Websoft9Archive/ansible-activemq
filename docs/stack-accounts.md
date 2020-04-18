@@ -4,13 +4,10 @@ These accounts are required for ActiveMQ image installation and configuration
 
 ## ActiveMQ
 
-Administrator account is set by yourselft at the time of ActiveMQ installation wizard
+ActiveMQ administrator username: `admin`  
+ActiveMQ administrator password: `admin` or stored in the file of your server instance: */credentials/password.txt*  
 
-## PostgreSQL
-
-ActiveMQ used the [Peer Authentication](https://www.postgresql.org/docs/10/auth-methods.html#AUTH-PEER) to connect PostgreSQL, the peer authentication method works by obtaining the client's operating system user name from the kernel and using it as the allowed database user name (with optional user name mapping). This method is only supported on local connections.
-
-ActiveMQ's log in page have provided the database GUI management tools, refer to [Manage databases](/admin-postgresql.md)
+You use the **SSH** and run the command `cat /credentials/password.txt` to get the password
 
 ## Linux
 
@@ -18,10 +15,11 @@ ActiveMQ's log in page have provided the database GUI management tools, refer to
 * Connect by: Online SSH on Cloud Console or SFTP/SSH tools on your local computer
 * Password: It was set by yourself when created instance
 * Username: Different Cloud Platform has differences
-   |  Cloud Platform   |  Administrator Username   |
-   | --- | --- |
-   |  Azure   |  It was set by yourself when created instance   |
-   |  AWS   |  ubuntu   |
+   |  Cloud Platform   |  Administrator Username   | Other |
+   | --- | --- | --- |
+   |  Azure   |  It was set by yourself when created instance   | [How to enable root access?](https://support.websoft9.com/docs/azure/server-login.html#sample2-enable-the-root-username) |
+   |  AWS CentOS   |  centos   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
+   |  AWS Ubuntu   |  ubuntu   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
    |  Alibaba Cloud, HUAWEI CLOUD, Tencent Cloud |  root   |
 
 If don't remember the password of Linux, you should reset password on Cloud Console

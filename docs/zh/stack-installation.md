@@ -11,10 +11,12 @@
 ## ActiveMQ 安装向导
 
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名:8161* 或 *http://Internet IP:8161*, 进入初始化页面
-![ActiveMQ初始化页面](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-login-websoft9.png)
+   ![ActiveMQ初始化页面](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-login-websoft9.png)
 
-2. 填写好所有参数，点击【Manage ActiveMQ broker】登录ActiveMQ控制台（[不知道账号密码？](/zh/stack-accounts.md#activemq)）
-![ActiveMQ控制台](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
+2. 点击【Manage ActiveMQ broker】登录ActiveMQ控制台（[不知道账号密码？](/zh/stack-accounts.md#activemq)）
+   ![ActiveMQ控制台](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
+
+3. 建议通过 */opt/apache-activemq/conf/jetty-realm.properties* 文件修改默认密码
 
 > 需要了解更多ActiveMQ的使用，请参考官方文档：[Using Apache ActiveMQ](https://activemq.apache.org/using-activemq)
 

@@ -49,9 +49,5 @@ Manual backup for application is based on the **Exporting source code and databa
 ```
 The general manual backup operation steps are as follows:
 
-1. Just compression and download the entire */usr/lib/python3/dist-packages/odoo* directory by SFTP 
-2. Export ActiveMQ's database by [phpMyAdmin](/zh/admin-mysql.md)
-   ![ActiveMQ Backup database](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-managesbk-websoft9.png)
-3. Put the source code file and database file in the same folder, named according to the date
-4. Backup completed
-
+1. Just compression and download the entire */opt/apache-activemq* directory by SFTP 
+2. Backup completed

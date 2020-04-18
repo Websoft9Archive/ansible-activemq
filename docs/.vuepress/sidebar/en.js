@@ -27,7 +27,7 @@ module.exports = [
         collapsable: false,
         children: [
           '/admin-services',
-          ['https://support.websoft9.com/docs/linux/lang-python.html','Java'],
+          ['https://support.websoft9.com/docs/linux/lang-java.html','Java'],
           ['https://support.websoft9.com/docs/linux/admin-practices.html','Linux'],
         ]
       },

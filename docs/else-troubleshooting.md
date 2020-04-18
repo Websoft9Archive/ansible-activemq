@@ -2,62 +2,23 @@
 
 We collect the most common troubleshooting of using ActiveMQ for your reference:
 
-## ActiveMQ related
+#### How can I use the logs?
 
-#### Nginx “413 Request Entity Too Large” error?
+You can find the keywords **Failed** or **error** from the logs file: `/opt/apache-activemq/data/activemq.log`
 
-The upload file size is limit 1M by default of Nginx, so you should lift this restrictions
+#### ActiveMQ service can't start?
 
-1. Use WinSCP to connect Server
-2. Edit [Nginx vhost configuration file](/stack-components.md#nginx)
-3. Insert `client_max_body_size 0;` 
+1. Use the debug mode of `activemq console` and you can see the errors
    ```
-   server {
-    listen 80;
-    server_name _;
-    client_max_body_size 0; #insert here
-    ...
+   /opt/apache-activemq/bin/activemq
    ```
-4. Save it and [Restart Nginx Service](/admin-services.md#nginx)
+2. Search the keywords **Failed** or **error** in the log file: */opt/apache-activemq/data/activemq.log*
 
-#### Could not upload file to ActiveMQ program directory problem via SFTP?
+3. The most common reasons are as follows:
 
-Since some Ubuntu systems have created the default user name ubuntu by default, ubuntu does not have the right to operate the source code or directory of the odoo program for ordinary users. you need to execute the command:
-
-```
-sudo chmod o+rw  /usr/lib/python2.x/dist-packages/odoo   # odoo10
-sudo chmod o+rw  /usr/lib/python3/dist-packages/odoo   # odoo11 or 12
-```
-
-#### ActiveMQ can't print Chinese content?
-
-When using the ActiveMQ printing function, the downloaded PDF file is only in English and there is no Chinese part, resulting in incomplete printing. The reason is that the required Chinese font is not downloaded in the system environment. Solution: execute the following command to download fonts
-
-~~~
-sudo apt-get install ttf-wqy-zenhei
-sudo apt-get install ttf-wqy-microhei
-~~~
-
-
-## Database related
-
-#### Database service could not be started?
-
-Insufficient disk space, insufficient memory, and configuration file errors can make database service could not be started  
-
-It is recommended to first check through the command.
-
-```shell
-# restart mysql service
-systemctl restart mysql
-
-# view disk space
-df -lh
-
-# view memory rate
-free -lh
-```
-## Server related
-
-Cloud Server troubleshooting is closely related to the Instance provider that is Cloud Platform   
-Please refer to [Cloud Platform Documentation](https://support.websoft9.com/docs/faq/tech-instance.html)
+   * The hostname have "." string, e.g: activemq5.6, you must rename it and restart the service by the following commands
+   ```
+   hostnamectl set-hostname activemq
+   systemctl restart activemq
+   ```
+   * Java environment variable problem. you can use the command `echo $JAVA_HOME` or `which java` to check it

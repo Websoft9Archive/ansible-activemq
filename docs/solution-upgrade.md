@@ -26,12 +26,21 @@ yum update -y
 
 ## ActiveMQ Upgrade
 
-ActiveMQ can be upgraded from Console, online follow the steps below to complete the upgrade:
+ActiveMQ upgrade is similar to installation, you can upgrade it by the following steps
 
-1. Log in ActiveMQ Console, [Enable developer mode](/solution-odoo.md#enable-developer-mode)
-2. Go to **Settings** > **Updates** to start upgrade ActiveMQ
-   ![ActiveMQ upgrade reminder](https://libs.websoft9.com/Websoft9/DocsPicture/en/odoo/odoo-upgradesui-websoft9.png)
-3. When completed the upgrade, you can get the successful reminder “Well done...”
-4. Click the **Update Apps list** to upgrade all ActiveMQ's Modules if you need
+1. Prepare for upgrade
+   ```
+   # stop ActiveMQ service
+   systemctl stop activemq
 
-More details please refer to official docs [ActiveMQ Update](https://www.odoo.com/documentation/master/setup/update.html)
+   # rename the dir of ActiveMQ for backup
+   mv /opt/apache-activemq  /opt/apache-activemqBK
+   ```
+2. [Download ActiveMQ](http://activemq.apache.org/components/classic/download/) and upload it to the directory */opt* after unzip it, then renamed the directory to *apache-activemq*
+3. Run the following modify permissions separately
+   ```
+   chown -R activemq. /opt/apache-activemq
+   chmod 640  /opt/apache-activemq/examples/stomp/php/*
+   chmod +x /opt/apache-activemq/bin/activemq
+   ```
+4. Restart the [ActiveMQ Service](/zh/admin-services#activemq) 
