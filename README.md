@@ -22,7 +22,7 @@
 
 更多请见[参数表](/docs/zh/stack-components.md)
 
-## 本项目安装的是 Redis 最新版吗？
+## 本项目安装的是 ActiveMQ 最新版吗？
 
 本项目是下载[ActiceMQ源码](https://activemq.apache.org/components/artemis/download/past_releases)安装。  
 
