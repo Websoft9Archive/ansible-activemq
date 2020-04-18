@@ -62,6 +62,6 @@
     notify: check_activemq_version
 
   - name: Check ActiveMQ Service
-    shell: systemctl status activemq | grep Active:
+    shell: systemctl status activemq | grep Active*
     register: check_activemq_service
     notify: check_activemq_service
