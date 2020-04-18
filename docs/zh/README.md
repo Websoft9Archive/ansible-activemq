@@ -8,7 +8,7 @@ home: false
 
 [ActiveMQ](https://activemq.apache.org) 是Apache出品，流行的、能力强劲的开源消息总线，完全支持JMS1.1和J2EE 1.4规范（持久化，XA消息，事务)，尽管JMS规范出台已经是很久的事情了，但是JMS在当今的J2EE应用中间仍然扮演着特殊的地位。ActiveMQ支持多种语言和协议编写客户端。
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
 
 ---
 
