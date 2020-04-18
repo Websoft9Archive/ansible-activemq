@@ -121,6 +121,14 @@ ls /usr/lib64/erlang
 
 未知
 
+#### ActiveMQ 服务无法启动？
+
+经过实践发现，主机名中若包含"."就会导致ActiveMQ无法启动
+
+* ActiveMQ5.6 不合法
+* ActiveMQ-centos 合法
+* ActiveMQ-centos7.5 不合法
+
 ## 日志
 
 * 2020-04-17  完成安装研究  cdl
