@@ -57,9 +57,7 @@
 # print version
 - block:
   - name: Check ActiveMQ Version
-    shell: ls /opt/apache-activemq | grep activemq
-    register: check_activemq_version
-    notify: check_activemq_version
+    shell: sudo sh -c "ls /opt/apache-activemq | grep activemq  1>> /data/logs/install_version.txt"
 
   - name: Check ActiveMQ Service
     shell: systemctl status activemq | grep Active*
