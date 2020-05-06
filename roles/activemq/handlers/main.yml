@@ -1,9 +1,4 @@
 ---
-    
-- name: check_activemq_version
-  debug:
-    var: check_activemq_version.stdout
-    
 - name: check_activemq_service
   debug:
     var: check_activemq_service.stdout
