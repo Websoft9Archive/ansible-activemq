@@ -1,13 +1,14 @@
 
 # you should modify these URL when you want to change the installation version
+# backup url: http://mirror.bit.edu.cn/apache/activemq
 activemq_meta:
   "classic":
-    download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.12/apache-activemq-5.15.12-bin.tar.gz"
+    download_url: "http://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.tar.gz"
     service: ""
   "artemis":
     download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.12/apache-activemq-5.15.12-bin.tar.gz"
     service: ""
     
 # this vars is only for sample
-activemq_download_url: "http://mirror.bit.edu.cn/apache/activemq/5.15.12/apache-activemq-5.15.12-bin.tar.gz"
+activemq_download_url: "http://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.tar.gz"
 activemq_distribution: "classic"
