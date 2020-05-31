@@ -1,21 +1,17 @@
 # CHANGELOG
 
-
-
 ## To do
 
-* 增加 ActiveMQ Artemis
-* 处理随机密码问题：The default username and password is admin/admin. You can configure this in the conf/jetty-real.properties file.
+1. Add ActiveMQ Artemis
 
 ## Logs
 
-
 ### Bug Fixes
 
-* 2020-04-17  去掉主机名中的"."，是的 activemq 服务可以启动
-
+* 2020-05-31  init password, configure this in the ./conf/jetty-real.properties file.
+* 2020-04-17  remote"." in hostname which make the activemq service can't be started
 
 ### Features
 
-* 2020-04-17  改写项目
+* 2020-04-17  Completed the ropository
 
