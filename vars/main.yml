@@ -7,4 +7,4 @@ init_application:
     service_before: activemq.service
     service_after: 
     commands: 
-      - sudo sed -i "s/{{dbs.username}}:{{dbs.password}}/{{dbs.username}}:$new_password/"  /opt/apache-activemq/conf/jetty-realm.properties
+      - sudo sed -i "s/{{dbs.username}}: {{dbs.password}}/{{dbs.username}}: $new_password/"  /opt/apache-activemq/conf/jetty-realm.properties
