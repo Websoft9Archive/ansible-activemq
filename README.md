@@ -26,7 +26,7 @@
 
 本项目是下载[ActiceMQ源码](https://activemq.apache.org/components/artemis/download/past_releases)安装。  
 
-我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装所需的Redis版本。
+我们会定期检查版本准确性，并增加官方最新的stable版本，以保证用户可以顺利安装所需的ActiceMQ版本。
 
 ## 安装指南
 
