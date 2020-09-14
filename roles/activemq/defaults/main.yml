@@ -11,5 +11,5 @@ activemq_meta:
     service: ""
     
 # this vars is only for sample
-activemq_download_url: "http://archive.apache.org/dist/activemq/5.16.0/apache-activemq-5.16.0-bin.tar.gz"
+activemq_download_url: "https://archive.apache.org/dist/activemq/5.16.0/apache-activemq-5.16.0-bin.tar.gz"
 activemq_distribution: "classic"
