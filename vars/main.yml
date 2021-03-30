@@ -8,3 +8,4 @@ init_application:
     service_before: activemq.service
     commands: 
       - 'sudo sed -i "s/admin: admin/admin: $new_password/"  /opt/apache-activemq/conf/jetty-realm.properties'
+      - systemctl restart activemq
