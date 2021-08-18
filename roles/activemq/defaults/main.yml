@@ -4,12 +4,12 @@
 activemq_meta:
   "classic":
     #download_url: "http://archive.apache.org/dist/activemq/5.15.13/apache-activemq-5.15.13-bin.tar.gz"
-    download_url: "https://archive.apache.org/dist/activemq/5.16.1/apache-activemq-5.16.1-bin.tar.gz"
+    download_url: "https://archive.apache.org/dist/activemq/5.16.3/apache-activemq-5.16.3-bin.tar.gz"
     service: ""
   "artemis":
     download_url: "http://archive.apache.org/dist/activemq/activemq-artemis/2.13.0/apache-artemis-2.13.0-bin.tar.gz"
     service: ""
     
 # this vars is only for sample
-activemq_download_url: "https://archive.apache.org/dist/activemq/5.16.0/apache-activemq-5.16.0-bin.tar.gz"
+activemq_download_url: "https://archive.apache.org/dist/activemq/5.16.3/apache-activemq-5.16.3-bin.tar.gz"
 activemq_distribution: "classic"
