@@ -6,7 +6,7 @@
 
 [English](/README.md) | [简体中文](/README-zh.md)  
 
-**ActiveMQ Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of  [ActiveMQ](https://activemq.apache.org/) based on Ansible and shell. It helps user install ActiveMQ and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
+**ActiveMQ Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [ActiveMQ](https://activemq.apache.org/) based on Ansible and shell. It helps user install ActiveMQ and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
 
 ## System Requirement
 
@@ -17,7 +17,9 @@ System Requirement to install this repository are as following：
 | Operating System   | CentOS7.x, Ubuntu20.04, Amazon Linux2 | Optional                 |
 | Public Cloud     | AWS, Azure, Alibaba Cloud, HUAWEI ClOUD, Tencent Cloud    | Optional                 |
 | Private Cloud     | KVM, VMware, VirtualBox, OpenStack    | Optional                 |
-| Server Configuration | vCPU no less than 1 core, Memory no less than  1 GIB, Storage no less than 10 GB, Bandwidth no less than 100M ||
+| Server Configuration | vCPU no less than 1 core, Memory no less than 1 GIB, Storage no less than 20 GB, Swap no less than 2GB |Bandwidth no less than 100M|
+
+To learn more information, please view [Installation & Configuration](https://activemq.apache.org/getting-started#UnixSourceInstallation).
 
 ## Ecosystem
 
@@ -48,10 +50,6 @@ Follow our [ActiveMQ image](https://apps.websoft9.com/activemq) for installation
 
 **[Administrator Guide](https://support.websoft9.com/docs/activemq)** 
 
-## Changelog
-
-Detailed changes are documented in the [CHANGELOG](/CHANGELOG.md).
-
 ## License
 
 [LGPL-3.0](/License.md), Additional Terms: It is not allowed to publish free or paid image based on this repository in any Cloud platform's Marketplace.
@@ -62,14 +60,17 @@ This program provided by Websoft9 contains a series of software with separate co
 
 ## FAQ
 
+#### How to install and view the latest release?
+
+This repository install way is Isntallation for download binaries files , you can  view the version from [Official URL] (https://archive.apache.org/dist/activemq/).  
+We will check [Release version](https://github.com/Websoft9/ansible-activemq/releases) regularly. Update and test this project to ensure that users can successfully install the required version of ActiveMQ.
+
+Learn more about [Version](version.md).
 #### Can I run this repository on Ansible Tower? 
 
 Yes.
 
-#### How to install and view the latest release?
+#### Although the results of the deploy by image are consistent with the results of deploy by script, what is the difference between the two deployment methods?
 
-Get the ActiveMQ version from [ActiveMQ repository](https://archive.apache.org/dist/activemq/), and modify the Ansible variable **[activemq_meta.download_url](/roles/activemq/defaults/main.yml)** to change the ActiveMQ version for this repository.  
+Suggest you read the document [Deploy by Image vs Deploy by Script](https://support.websoft9.com/docs/faq/bz-product.html#deployment-comparison).
 
-#### Is the default password safe?
-
-The solution used the random password solution, every deployment produce unique password which is different from other users
