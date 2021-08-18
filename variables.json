@@ -14,10 +14,6 @@
     "en": "Isntallation for download binaries files ",
     "zh": "下载可执行二进制包解压安装"
   },
-  "install_url": "https://archive.apache.org/dist/activemq/",
-  "release_extra": {
-    "en": "Learn more about [Version](version.md).",
-    "zh": "阅读应用的[版本号管理](version.md)文档，了解更多详情。"
-  }
+  "install_url": "https://archive.apache.org/dist/activemq/"
  
 }
