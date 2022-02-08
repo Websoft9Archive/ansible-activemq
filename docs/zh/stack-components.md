@@ -17,7 +17,7 @@ whereis java
 
 ### ActiveMQ
 
-ActiveMQ 安装目录： */opt/activemq/*  
+ActiveMQ 安装目录： */opt/apache-activemq/*  
 ActiveMQ 配置目录： */opt/apache-activemq/conf*  
 ActiveMQ 数据目录： */opt/apache-activemq/data*  
 ActiveMQ 日志目录： */opt/apache-activemq/data/activemq.log*
