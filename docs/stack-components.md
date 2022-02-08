@@ -13,7 +13,7 @@ whereis java
 
 ### ActiveMQ
 
-ActiveMQ installation directory:  */opt/activemq/*  
+ActiveMQ installation directory:  */opt/apache-activemq/*  
 ActiveMQ configuration directory:  */opt/apache-activemq/conf*  
 ActiveMQ data directory:  */opt/apache-activemq/data*  
 ActiveMQ logs directory:  */opt/apache-activemq/data/activemq.log*
