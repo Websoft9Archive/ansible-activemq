@@ -10,10 +10,10 @@ If you have completed the ActiveMQ deployment on Cloud Platform, the following s
 
 ## ActiveMQ Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://DNS:8161* or *http://Internet IP:8161*, you will enter installation wizard of ActiveMQ
+1. Using local Chrome or Firefox to visit the URL *http://DNS:8161* or *http://Internet IP:8161*, you will enter installation wizard of ActiveMQ([Don't know password?](/stack-accounts.md#activemq))
   ![ActiveMQ console](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-login-websoft9.png)
 
-2. Click link【Manage ActiveMQ broker】to login ActiveMQ console([Don't know password?](/stack-accounts.md#activemq))
+2. Click link【Manage ActiveMQ broker】to login ActiveMQ console
   ![ActiveMQ console](http://libs.websoft9.com/Websoft9/DocsPicture/zh/activemq/activemq-logined-websoft9.png)
 
 3. You can reset the password by modify the file */opt/apache-activemq/conf/jetty-realm.properties* 
