@@ -7,7 +7,7 @@
   
 - name: Replace the dots with dashes in hostname
   set_fact: 
-    hostname_new: "{{ hostname_old.stdout | replace('.', '-') }}" 
+    hostname_new: "{{ hostname_old.stdout }} | replace('.', '-') " 
     
 - name: Set hostname
   shell: hostnamectl set-hostname "{{ hostname_new }}"
